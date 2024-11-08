@@ -90,12 +90,23 @@
   }
 }
 
+.swiper-slide-active .slider__item-text,
+.swiper-slide-next .slider__item-text {
+  left: 0;
+  opacity: 1;
+}
+
 .slider__item-text {
   margin-top: 3.6rem;
   margin-bottom: 0;
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  position: relative;
+  left: 20px;
+  opacity: 0;
+  transition: left 0.3s, opacity 0.3s;
+  transition-delay: 0.3s;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
