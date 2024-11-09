@@ -3,10 +3,13 @@
 
   &:hover {
     .social-block__list {
-      opacity: 1;
       pointer-events: auto;
+      li {
+        opacity: 1;
+      }
     }
   }
+
 }
 
 .social-block__toggler {
@@ -17,6 +20,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color 0.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +39,8 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition-property: width height border background-color;
+    transition-duration: 0.3s
   }
 
   svg {
@@ -44,15 +50,39 @@
     height: 2.2rem;
   }
 
-  &:hover,
-  .social-block--active & {
-    color: $c-purple;
+  &:hover {
+    .social-block--active & {
+      color: $c-dark;
 
-    &::before {
-      width: 112.5%;
-      height: 112.5%;
+      &::before {
+        background-color: $c-light;
+        border: 2px solid $c-light;
+        width: 112.5%;
+        height: 112.5%;
+      }
     }
   }
+
+  .social-block--active & {
+    &::before {
+      background-color: $c-purple;
+      border: 2px solid $c-purple;
+    }
+   
+    color:$c-light;
+
+    &:focus {
+      color:$c-light;
+      outline: none;
+  
+      &::before {
+        background-color: $c-purple;
+        border: 2px solid $c-purple;
+      }
+
+    }
+  }
+
 
   &:focus {
     color: $c-purple;
@@ -62,10 +92,7 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
-      opacity: 1;
-      pointer-events: auto;
-    }
+    
   }
 
   &:active,
@@ -142,8 +169,11 @@
     pointer-events: auto;
   }
 
+
   li {
     flex: none;
+    opacity: 0;
+    transition: opacity 0.3s;
     margin-bottom: 0.5rem;
 
     @media (min-width: $stop-scaling) {
@@ -152,11 +182,20 @@
 
     @media (max-width: $tablet) and (orientation: portrait) {
       margin: 0 1.25rem;
+      opacity: 1;
     }
 
     @media (max-width: $mobile) and (orientation: landscape) {
       margin: 0 1.25rem;
+      opacity: 1;
     }
+  }
+
+  li:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+  li:nth-child(3) {
+    transition-delay: 0.2s;
   }
 }
 
@@ -168,6 +207,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: color 0.3s;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
