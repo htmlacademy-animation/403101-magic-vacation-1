@@ -86,7 +86,17 @@
   }
 }
 
+.screen--intro.active .intro__message {
+  opacity: 1;
+  top: 0;
+}
+
 .intro__message {
+  transition: opacity 1s, top 1s;
+  transition-delay: 1s;
+  position: relative;
+  top: 20px;
+  opacity: 0;
   flex: none;
   width: 50.9rem;
   max-width: 50%;
