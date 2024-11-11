@@ -40,6 +40,8 @@
 
 .screen__footer {
   position: absolute;
+  opacity: 0;
+  transform: translateY(100%);
   bottom: 0;
   left: 0;
   right: 0;

@@ -29,6 +29,9 @@
 .page-header__logo {
   @include hover;
   position: relative;
+  opacity: 0;
+  transform: translateX(-20%);
+
   flex: none;
   top: -0.5rem;
   display: block;
@@ -130,6 +133,7 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  opacity: 0;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
