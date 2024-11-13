@@ -38,9 +38,16 @@
   z-index: 1;
 }
 
+body.active .screen__footer {
+  opacity: 1;
+  transform: none;
+}
+
 .screen__footer {
   position: absolute;
   opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
   transform: translateY(100%);
   bottom: 0;
   left: 0;
