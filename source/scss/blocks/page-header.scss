@@ -37,7 +37,8 @@ body.active .page-header__logo {
   opacity: 0;
   transform: translateX(-20%);
   transition-property: opacity, transform;
-  transition-duration: 0.3s;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(.15,.95,.37,.9);
   transition-delay: 0.2s;
   flex: none;
   top: -0.5rem;
@@ -144,7 +145,8 @@ body.active .page-header__nav {
 .page-header__nav {
   display: flex;
   transition-property: opacity, transform;
-  transition-duration: 0.3s;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(.15,.95,.37,.9);
   transition-delay: 0.4s;
   align-items: center;
   opacity: 0;
